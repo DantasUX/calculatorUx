@@ -1,0 +1,17 @@
+.calculator{
+    height: 445px;
+    width: 250px;
+    border-radius: 25px;
+    overflow: hidden; /*mostra os elementos que estão dentro do tamanho da div*/
+
+    display: grid;
+    grid-template-columns: repeat(4,25%);
+    grid-template-rows:  1fr 50px 50px 50px 50px 50px;
+
+    box-shadow: 5px 5px 8px  rgb(0, 0, 0,0.5);
+    padding: 12px;
+    padding-bottom: 25px;
+    
+     background-color: linear-gradient(90deg, rgb(228, 228, 228) 0%, rgb(255, 255, 255) 100%);
+
+}
