@@ -4,9 +4,14 @@ import './index.css';
 import Calculador from './main/Calculator';
 import reportWebVitals from './reportWebVitals';
 
+
 ReactDOM.render(
   <div>
     <h3> Calculadora</h3>
+    
+    
+
+    
     <Calculador/>
   </div>,
 

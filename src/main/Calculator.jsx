@@ -1,7 +1,8 @@
 import React, { Component } from 'react' /*pq importar componnet??*/
 import './Calculator.css'
-
 import Button from '../components/Button'
+import BtnSom from '../components/BtnSom'
+import BtnLuz from '../components/BtnLuz'
 import Display from '../components/Display'
 
 
@@ -32,7 +33,15 @@ export default class Calculador extends Component{
 
     clearMemory(x){
         this.somBtn(x)
-        this.setState({...initialState})
+        this.setState({
+            displayValue: '0',
+            clearDisplay: false,
+            operetion: '',
+            values: [0,0],
+            historic: '',
+            current:0,
+
+        })
     }
 
     
@@ -40,14 +49,12 @@ export default class Calculador extends Component{
     setOperation(operetion){
     this.somBtn(operetion)
         if( this.state.current===0){
-            const historic = this.state.values[0] + operetion
 
             if(operetion==="="){
                 return
             }
-           else{
-                this.setState({operetion, current: 1, clearDisplay: true,
-                historic})
+            else{
+                this.setState({operetion, current: 1, clearDisplay: true})
             }
             
         }
@@ -203,15 +210,20 @@ export default class Calculador extends Component{
     }
     
     addSom(digito){
-        this.somBtn(digito)
+        
         if(this.state.som){
+            this.somBtn(digito)
             this.state.som=false
-            console.log("deligado")
+            this.somBtn(digito)
+            
         }
         else{
             this.state.som=true
-            console.log("ligado")
+           
         }
+    }
+    editCor(){
+
     }
 
     somBtn(frequency){
@@ -298,17 +310,14 @@ export default class Calculador extends Component{
         
     }
 
-
-
-
     render(){
         return(
             <div className="calculator">
                 
                 <Display value={this.state.displayValue}/> 
                 <Button label="AC" click={this.clearMemory} fn/>
-                <Button label="cor" click={this.addSom} fn/>
-                <Button label="som" click={this.clearMemory} fn/>
+                <span onClick={this.addSom}> <BtnSom BtnSom/></span>
+                <span onClick={this.editCor}> <BtnLuz BtnSom/></span>
                 <Button label="+" click={this.setOperation} operetion/>
                 <Button label="7" click={this.addDigito} />
                 <Button label="8" click={this.addDigito} />

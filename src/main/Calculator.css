@@ -1,17 +1,17 @@
 .calculator{
-    height: 445px;
-    width: 250px;
-    border-radius: 25px;
+    height: 330px;
+    width: 160px;
+    border-radius: 10px;
     overflow: hidden; /*mostra os elementos que estão dentro do tamanho da div*/
 
     display: grid;
     grid-template-columns: repeat(4,25%);
-    grid-template-rows:  1fr 50px 50px 50px 50px 50px;
+    grid-template-rows:  1fr 35px 35px 35px 35px 35px;
 
-    box-shadow: 5px 5px 8px  rgb(0, 0, 0,0.5);
-    padding: 12px;
-    padding-bottom: 25px;
-    
-     background-color: linear-gradient(90deg, rgb(228, 228, 228) 0%, rgb(255, 255, 255) 100%);
+    box-shadow: 5px 5px 12px  rgba(126, 126, 126, 0.5);
+    padding: 10px;
+    padding-bottom: 20px;
+    background: linear-gradient(315deg, rgb(235, 235, 235) 0%, rgb(255, 255, 255) 100%);
+     
 
 }
